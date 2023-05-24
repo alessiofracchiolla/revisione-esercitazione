@@ -10,7 +10,7 @@
 
 //MAIN MODIFICATO DA ALESSIO FRACCHIOLLA, IL CODICE ORIGINALE SI TROVA UN FONDO AL PROGRAMMA COMMENTATO
 
-int main(){
+int main() {
 
 
 	//verifico i metodi del rettangolo
@@ -27,20 +27,28 @@ int main(){
 
 	}
 
+	rettangolo2.SetLength(4);
+	rettangolo2.SetWidth(1);
+	rettangolo2.Dump();
+
 
 	//verifico i metodi del rombo
 
-	Rhombus rombo1=Rhombus();         //default
+	Rhombus rombo1 = Rhombus();         //default
 	Rhombus rombo2 = Rhombus(2, 3);   //costruttore
-    Rhombus rombo3 = rombo2;          //copia
+	Rhombus rombo3 = rombo2;          //copia
 
 	rombo2.Dump();
 
-	if (rombo2==rombo3){
+	if (rombo2 == rombo3) {
 
 		rombo2.Dump();
 
 	}
+
+	rombo2.SetDiagH(4);
+	rombo2.SetDiagV(5);
+	rombo2.Dump();
 
 	//verifico i metodi del trapezio
 
@@ -56,6 +64,10 @@ int main(){
 
 	}
 
+	trapezio2.SetTopside(4);
+	trapezio2.SetBottomside(2);
+	trapezio2.SetHeight(7);
+	trapezio2.Dump();
 	return 0;
 }
 
@@ -100,9 +112,9 @@ int main()
 		case (1):
 			cout << "new rectangle" << endl;
 			cout << "insert length e width " << endl;
-			
+
 			float l, w;
-			scanf_s("%f%f", &l, &w); 
+			scanf_s("%f%f", &l, &w);
 			figure[cont]= new Rectangle(w, l);
 
 			cout << "\n" << endl;
@@ -122,11 +134,11 @@ int main()
 
 			cont++;
 			break;
-		
+
 		case (3):
 			cout << "new isoceles trapezoid" << endl;
 			cout << "insert topside, bottomside and height\n" << endl;
-			
+
 			float t, b, h;
 			scanf_s("%f%f%f", &t, &b, &h);
 			figure[cont] = new isoTrapezoid(t, b, h);
